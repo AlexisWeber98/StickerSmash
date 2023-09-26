@@ -16,8 +16,8 @@ export default function App() {
       </View>
 
       <View style={styles.footerContainer}>
-        <Button label={"Choose a photo"}/>
-        <Button label={"Use this photo"}/>
+        <Button theme= "primary" label="Choose a photo" />
+        <Button label="Use this photo" />
       </View>
       <StatusBar style="auto" />
     </View>
@@ -34,5 +34,10 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     paddingTop: 58,
+  },
+
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: "center",
   },
 });
