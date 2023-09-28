@@ -18,7 +18,7 @@ export default function Button({ label, theme, onPress }) {
             color="#25292e"
             style={styles.buttonIcon}
           />
-          <Text style={[styles.labe, { color: "#25292e" }]}>{label}</Text>
+          <Text style={[styles.label, { color: "#25292e" }]}>{label}</Text>
         </Pressable>
       </View>
     );
