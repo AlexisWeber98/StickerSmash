@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import {useState} from "react"
+import { useState } from "react";
 
 //--------------------components----------------------//
 
@@ -10,7 +10,11 @@ import Button from "./components/Button";
 
 export default function App() {
   const placeHolderImage = require("./assets/images/background-image.png");
-  const [selectedImage, setSelectedImage] = useState (null);
+
+  //-------------------- Local States--------------------//
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const [showOptions, setShowOptions] = useState(false);
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -20,6 +24,7 @@ export default function App() {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
+      setShowOptions(true);
     } else {
       alert("You did not  selected any image");
     }
@@ -28,17 +33,28 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <ImageViewer placeholderImageSource={placeHolderImage} selectedImage = {selectedImage}/>
-      </View>
-
-      <View style={styles.footerContainer}>
-        <Button
-          theme="primary"
-          label="Choose a photo"
-          onPress={pickImageAsync}
+        <ImageViewer
+          placeholderImageSource={placeHolderImage}
+          selectedImage={selectedImage}
         />
-        <Button label="Use this photo" />
       </View>
+      {showOptions ? (
+        <View />
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button
+            theme="primary"
+            label="Choose a photo"
+            onPress={pickImageAsync}
+          />
+          <Button
+            label="Use this photo"
+            onPress={() => {
+              setShowOptions(true);
+            }}
+          />
+        </View>
+      )}
       <StatusBar style="auto" />
     </View>
   );
