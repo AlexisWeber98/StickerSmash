@@ -16,9 +16,9 @@ export default function App() {
 
   //-------------------- Local States--------------------//
   const [isModalVisible, setIsModalVisible] = useState(false);
-  
+
   const [showOptions, setShowOptions] = useState(false);
-  
+
   const [selectedImage, setSelectedImage] = useState(null);
 
   //------------------------ functions -----------------//
@@ -45,6 +45,12 @@ export default function App() {
     }
   };
 
+  const onReset = () => {
+    setShowOptions(false);
+  };
+
+  const onSaveImageAsync = async () => {};
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -54,7 +60,17 @@ export default function App() {
         />
       </View>
       {showOptions ? (
-        <View />
+        <View style={styles.optionsContainer}>
+          <View style={styles.optionsRow}>
+            <IconButton icon="refresh" label="Reset" onPress={onReset} />
+            <CircleButton onPress={onAddSticker} icon />
+            <IconButton
+              icon="save-alt"
+              label="Save"
+              onPress={onSaveImageAsync}
+            />
+          </View>
+        </View>
       ) : (
         <View style={styles.footerContainer}>
           <Button
@@ -75,7 +91,6 @@ export default function App() {
         onClose={onModalClose}></EmojiPicker>
       <StatusBar style="auto" />
     </View>
-   
   );
 }
 
@@ -95,5 +110,15 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 1 / 3,
     alignItems: "center",
+  },
+
+  optionsContainer: {
+    position: "absolute",
+    bottom: 80,
+  },
+
+  optionsRow: {
+    alignItems: "center",
+    flexDirection: "row",
   },
 });
