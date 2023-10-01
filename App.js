@@ -10,6 +10,7 @@ import Button from "./components/Button";
 import IconButton from "./components/IconButton";
 import EmojiPicker from "./components/EmojiPicker";
 import EmojiList from "./components/EmojiList";
+import EmojiSticker from "./components/EmojiSticker";
 import ImageViewer from "./components/ImageViewer";
 
 export default function App() {
@@ -61,6 +62,7 @@ export default function App() {
           placeholderImageSource={placeHolderImage}
           selectedImage={selectedImage}
         />
+        {pickedEmoji !==null ? <EmojiSticker imageSize={40} stickerSource={pickedEmoji}/> : null}
       </View>
       {showOptions ? (
         <View style={styles.optionsContainer}>
