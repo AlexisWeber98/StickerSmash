@@ -6,10 +6,11 @@ import { useState } from "react";
 //--------------------components----------------------//
 
 import CircleButton from "./components/CircleButton";
+import Button from "./components/Button";
 import IconButton from "./components/IconButton";
 import EmojiPicker from "./components/EmojiPicker";
+import EmojiList from "./components/EmojiList";
 import ImageViewer from "./components/ImageViewer";
-import Button from "./components/Button";
 
 export default function App() {
   const placeHolderImage = require("./assets/images/background-image.png");
@@ -20,6 +21,8 @@ export default function App() {
   const [showOptions, setShowOptions] = useState(false);
 
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const [pickedEmoji, setPickedEmoji] = useState(null)
 
   //------------------------ functions -----------------//
 
@@ -88,7 +91,9 @@ export default function App() {
       )}
       <EmojiPicker
         isVisible={isModalVisible}
-        onClose={onModalClose}></EmojiPicker>
+        onClose={onModalClose}>
+          <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose}/>
+        </EmojiPicker>
       <StatusBar style="auto" />
     </View>
   );
