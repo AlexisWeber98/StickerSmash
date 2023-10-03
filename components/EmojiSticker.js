@@ -23,9 +23,9 @@ export default EmojiSticker = ({ imageSize, stickerSource }) => {
 
   const onDoubleTap = useAnimatedGestureHandler({
     onActive: () => {
-      if (scaleImage.value !== imageSize * 2) {
-        scaleImage.value = imageSize * 2;
-      }
+     
+        scaleImage.value += 30;
+      
     },
   });
 
