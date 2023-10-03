@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 1 / 3,
     alignItems: "center",
+    padding:"10%"
   },
 
   optionsContainer: {
