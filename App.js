@@ -7,9 +7,6 @@ import * as MediaLibrary from "expo-media-library";
 import { captureRef } from "react-native-view-shot";
 import domtoimage from "dom-to-image";
 
-
-
-
 //--------------------components----------------------//
 
 import CircleButton from "./components/CircleButton";
@@ -65,6 +62,7 @@ export default function App() {
 
   const onReset = () => {
     setShowOptions(false);
+    setPickedEmoji(null);
   };
 
   const onSaveImageAsync = async () => {
@@ -94,7 +92,6 @@ export default function App() {
   };
 
   return (
-    
     <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <View ref={imageRef} collapsable={false}>
@@ -146,7 +143,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
