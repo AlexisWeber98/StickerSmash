@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   label: {
-    color: "#fff",
+    color: "black",
     fontSize: 16,
   },
   buttonIcon: {
