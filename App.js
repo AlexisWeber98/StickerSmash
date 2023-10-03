@@ -76,7 +76,7 @@ export default function App() {
 
         await MediaLibrary.saveToLibraryAsync(localUri);
         if (localUri) {
-          alert("Saved!");
+          alert("Saved on your galery!");
         }
       } catch (error) {
         console.log(error);
