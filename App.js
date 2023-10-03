@@ -122,12 +122,6 @@ export default function App() {
               label="Choose a photo"
               onPress={pickImageAsync}
             />
-            <Button
-              label="Use this photo"
-              onPress={() => {
-                setShowOptions(true);
-              }}
-            />
           </View>
         )}
         <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
