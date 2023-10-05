@@ -61,9 +61,12 @@ export default function App() {
   };
 
   const onReset = () => {
-    setShowOptions(false);
-    setPickedEmoji(null);
-    setSelectedImage(null);
+    if (pickedEmoji) {
+      setPickedEmoji(null);
+    } else {
+      setShowOptions(false);
+      setSelectedImage(null);
+    }
   };
 
   const onSaveImageAsync = async () => {
@@ -150,7 +153,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 1 / 3,
     alignItems: "center",
-    padding:"10%"
+    padding: "10%",
   },
 
   optionsContainer: {
