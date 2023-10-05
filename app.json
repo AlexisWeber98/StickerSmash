@@ -11,7 +11,7 @@
       ]
     ],
     "name": "StickerSmash Pro Version",
-    "slug": "StickerSmash Pro Version",
+    "slug": "stickersmash-pro-version",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -41,15 +41,16 @@
         "android.permission.WRITE_EXTERNAL_STORAGE",
         "android.permission.ACCESS_MEDIA_LOCATION"
       ],
-      "package": "com.alexiscode.StickerSmash"
+      "package": "com.alexiscode.StickerSmashProVerion"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "09b2f080-30a1-4802-ae4a-d71fd8178a34"
+        "projectId": "ca06dc3c-7453-4f33-8bcd-d4301ae71edb"
       }
-    }
+    },
+    "owner": "alexiscode"
   }
 }
